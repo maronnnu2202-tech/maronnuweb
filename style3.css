@@ -1,0 +1,87 @@
+body {
+
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+
+  /* 🎨 グラデーション背景（未来感＋柔らかさ） */
+  background: linear-gradient(135deg, #7ca8c7, #2ca2eb);
+}
+
+
+/* コンテンツの中央寄せ */
+.center-content {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* テキスト中央寄せ */
+.center-content h1,
+.center-content h2,
+.center-content h3,
+.center-content p,
+.center-content a {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* リストを中央に */
+.center-content ul {
+    display: inline-block;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* リンクのスタイル */
+a {
+    color: #ffb4f0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+button {
+  background-color: #ffd97a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffdc41;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff; /* よもぎ色 */
+  text-align: center;
+  margin-top: 60px;
+  letter-spacing: 2px;
+
+  /* 🌟 立体感を出す影 */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+
+  /* ✨ ゆるやかなフェードイン */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInTitle 1.2s ease-out forwards;
+}
+
+/* 🔄 アニメーション定義 */
+@keyframes fadeInTitle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,136 @@
+/* ====== 基本設定 ====== */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb); /* 背景グラデーション */
+    font-family: sans-serif;
+}
+
+/* ====== リンクボタンのスタイル ====== */
+.button-link {
+    max-width: 100%;
+    padding: 10px 20px;
+    background: #ffb46d;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.button-link:hover {
+    background: #0056b3;
+}
+
+/* ====== 見出しのスタイル ====== */
+h1, h2, h3 {
+    margin: 0;
+    padding: 12px 0;
+    color: #ffffff;
+    font-size: 40px;
+    display: block;
+    width: fit-content;
+    margin-left: 40px;
+}
+
+/* ====== ボタンのスタイル ====== */
+button {
+    background-color: #ff6f61;     /* ボタンの背景色 */
+    color: white;                  /* 文字色 */
+    padding: 12px 24px;            /* 内側の余白 */
+    font-size: 18px;               /* 文字サイズ */
+    border: none;                  /* 枠線なし */
+    border-radius: 8px;            /* 角丸 */
+    cursor: pointer;               /* ポインター表示 */
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+button:hover {
+    background-color: #e85c50;     /* ホバー時の色 */
+}
+
+/* ====== バナー画像エリア ====== */
+.banner {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 250px;
+    margin: 32px auto 24px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #f7f7f7;
+}
+
+/* バナー画像の調整 */
+.banner-logo, .banner-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #f7f7f7;
+}
+
+/* ====== メインコンテンツ中央寄せ ====== */
+.center-content {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 10px;
+}
+
+/* テキスト中央寄せ */
+.center-content h1,
+.center-content h2,
+.center-content h3,
+.center-content p,
+.center-content ul,
+.center-content a {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* リストを中央に配置し、内容は左寄せ */
+.center-content ul {
+    display: inline-block;
+    text-align: left;
+}
+
+/* ====== 登録者数表示エリア ====== */
+#subscriber-count {
+    color: #2c3e50;                /* ダークブルー系 */
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #f0f8ff;     /* 背景色（淡い水色） */
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* ====== スマホ・タブレット対応（レスポンシブ） ====== */
+@media (max-width: 600px) {
+    .banner {
+        height: 120px;
+        margin: 16px auto 16px auto;
+        border-radius: 8px;
+    }
+    .banner-logo, .banner-bg {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    h1, h2, h3 {
+        font-size: 1.5em;
+        margin-left: 0;
+        padding: 8px 0;
+    }
+    .center-content {
+        max-width: 100%;
+        padding: 0 4px;
+    }
+    .button-link {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
