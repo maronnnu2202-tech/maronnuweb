@@ -85,3 +85,29 @@ h1 {
     transform: translateY(0);
   }
 }
+/* ====== スマホ・タブレット対応（レスポンシブ） ====== */
+@media (max-width: 600px) {
+    .banner {
+        height: 120px;
+        margin: 16px auto 16px auto;
+        border-radius: 8px;
+    }
+    .banner-logo, .banner-bg {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    h1, h2, h3 {
+        font-size: 1.5em;
+        margin-left: 0;
+        padding: 8px 0;
+    }
+    .center-content {
+        max-width: 100%;
+        padding: 0 4px;
+    }
+    .button-link {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
