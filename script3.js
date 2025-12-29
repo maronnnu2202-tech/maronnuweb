@@ -1,30 +1,8 @@
-// ✅ あなたのAPIキーとチャンネルIDをここに入力してください
-const API_KEY = 'AIzaSyConlnuRZRn1wnUIRP_genVuGTZGZUACWc'; // 例: AIzaSyDxxxxxxx
-const CHANNEL_ID = 'UCD4nD3D0BGxW8UAR9qD59MQ'; // 例: UC_x5XG1OV2P6uZZ5FSM9Ttw
+document.addEventListener('DOMContentLoaded', function () {
+  const API_KEY = 'AIzaSyB3X9nYiE5XqxCS7VjX6y51K1sW6f559YM'; // ← あなたのAPIキー
+  const CHANNEL_ID = 'UCY9YJEfhZrkU-AYXtQqiRCg'; // ← まろんぬ実写チャンネルのチャンネルID
 
-// 🔁 登録者数を取得して表示する関数
-function fetchSubscriberCount() {
-  fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('APIリクエストに失敗しました');
-      }
-      return response.json();
-    })
-    .then(data => {
-      const count = data.items[0].statistics.subscriberCount;
-      document.getElementById('subscriber-count').textContent = `${count}人`;
-    })
-    .catch(error => {
-      console.error('登録者数の取得に失敗しました:', error);
-      document.getElementById('subscriber-count').textContent = '取得失敗';
-    });
-}
-
-// 🔽 最新動画を取得して表示する関数
-function fetchLatestVideos() {
   const videoContainer = document.getElementById('latest-video');
-  if (!videoContainer) return;
 
   fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&maxResults=3&order=date&type=video&key=${API_KEY}`)
     .then(response => {
@@ -32,12 +10,14 @@ function fetchLatestVideos() {
       return response.json();
     })
     .then(data => {
-      videoContainer.innerHTML = '';
+      videoContainer.innerHTML = ''; // 初期表示をクリア
 
+      // APIエラー時の処理
       if (data.error) {
         videoContainer.textContent = 'APIエラー: ' + (data.error.message || '不明なエラー');
         return;
       }
+
       if (!data.items || data.items.length === 0) {
         videoContainer.textContent = '動画が見つかりませんでした。';
         return;
@@ -45,11 +25,13 @@ function fetchLatestVideos() {
 
       data.items.forEach(video => {
         const title = video.snippet?.title || 'タイトルなし';
+        // video.id.videoId か video.id のどちらかで取得
         const videoId = video.id?.videoId || (typeof video.id === 'string' ? video.id : null);
         const thumbnail = video.snippet?.thumbnails?.high?.url;
-        if (!videoId || !thumbnail) return;
+        if (!videoId || !thumbnail) return; // 不正なデータはスキップ
 
         const link = `https://www.youtube.com/watch?v=${videoId}`;
+
         const videoHTML = `
           <div style="margin-bottom: 20px;">
             <a href="${link}" target="_blank" style="text-decoration: none; color: inherit;">
@@ -65,12 +47,4 @@ function fetchLatestVideos() {
       console.error('動画取得エラー:', error);
       videoContainer.textContent = '動画の取得に失敗しました。';
     });
-}
-
-// 🔄 定期的に更新（例：30秒ごと）
-fetchSubscriberCount(); // 初回実行
-setInterval(fetchSubscriberCount, 3600000); // 1時間ごとに更新
-
-// 🔄 最新動画も初回実行＆1時間ごとに更新
-fetchLatestVideos();
-setInterval(fetchLatestVideos, 3600000);
+});

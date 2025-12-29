@@ -2,28 +2,56 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>まろんぬLab チャンネル紹介</title>
+  <title>maronnu Lab チャンネル紹介</title>
   <link rel="stylesheet" href="style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="center-content">
-    <h1>maronnu Lab</h1>
-    <p>このチャンネルでは、3dプリンターを使って工作して行きます。</p>
-<p>制作リクエストはコメント欄までお願いします。</p>
-    <h2>📌 チャンネルはこちら</h2>
-    <a href="https://youtube.com/@maronnulab?si=yJ8vydlTms1f46mq" target="_blank">
-      ▶ YouTubeチャンネルを見る
-    </a>
-     <a href="https://www.nicovideo.jp/user/129204236" target="_blank">
-      ▶ ニコニコ動画を見る
-
-    <h2>📅 最新の動画</h2>
-    <ul>
-        <li><a href="https://youtube.com/shorts/9H8VkNI1IjY?si=Dvbtmb9uMhqRIyQ6" target="_blank">3dプリンターで何を作っているでしょう？#3dプリンター #3dprinting</a></li>
-        <li><a href="https://youtube.com/shorts/ORpzxNy56KU?si=h-31tY-mXX49_ZzW" target="_blank">『AIに3dプリンターのオブジェを作らせた結果』#3dプリンタ一＃手作り工作 #3dprinting</a></li>
-        <li><a href="https://youtube.com/shorts/KhPgjvkhRj8?si=XPJWKrQ8sFT2VpcO" target="_blank">「Ai」vs「人間」の作ったコマ長く回るのはどっち？#3dプリンター #3dprinting #ショート</a></li>
-    </ul> 
-    <br><br>
-    <button onclick="location.href='index.html'">ホームに戻る</button>
+  
+  <div class="character-container">
+    <img src="koara.png" alt="動くキャラクター" class="moving-character">
   </div>
+  
+  <div class="center-content">
+
+    <div class="title-section">
+      <h1>maronnu Lab</h1>
+      <p class="subtitle">このチャンネルでは、3Dプリンターを使って工作していきます。</p>
+      <p class="subtitle">制作リクエストはコメント欄までお願いします。</p>
+    </div>
+
+    <div class="link-section">
+      <a href="https://youtube.com/@maronnulab?si=yJ8vydlTms1f46mq" target="_blank" class="button-link youtube-btn">
+        ▶ YouTubeチャンネルを見る
+      </a>
+      <a href="https://www.nicovideo.jp/user/129204236" target="_blank" class="button-link niconico-btn">
+        ▶ ニコニコ動画を見る
+      </a>
+    </div>
+
+    <div class="latest-video-container">
+      <h2>最新の動画</h2>
+      <div id="latest-video">読み込み中...</div>
+    </div>
+
+    <div class="download-link-box">
+      <div class="box-image">
+        <img src="download.png" alt="デバイスの画像">
+      </div>
+      <div class="box-text">
+        <h3 class="box-title">ダウンロード</h3>
+        <p class="box-description">動画で紹介したアイテムや、PCやスマホで使える壁紙、マウスクカーソルなどなど便利なものを配布しています。</p>
+        <a href="download.html" class="box-button download-link-btn">
+          ダウンロード
+        </a>
+      </div>
+    </div>
+
+    <button onclick="location.href='index.html'" class="home-btn">ホームに戻る</button>
+  </div>
+
+  <script src="script2.js"></script>
 </body>
+</html>

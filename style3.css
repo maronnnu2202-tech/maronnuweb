@@ -111,3 +111,14 @@ h1 {
         padding: 8px 12px;
     }
 }
+#latest-video img {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  max-width: 240px;
+  display: block;
+  margin: 0 auto;
+}
+
+#latest-video img:hover {
+  transform: scale(1.03);
+}

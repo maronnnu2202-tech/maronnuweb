@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+:root {
+  --main-blue: #4FC3F7;         /* 水色アクセント */
+  --dark-blue: #0288D1;         /* 濃い水色（ホバーなど） */
+  --light-bg: #ffffff;          /* 白基調の背景 */
+  --soft-blue: #E1F5FE;         /* 淡い水色（カード背景） */
+  --font-hand: 'Patrick Hand', cursive;
+  --accent-color: #81D4FA;      /* タグなどの明るい水色 */
+}
+
+/* ====== 背景と基本設定 ====== */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--light-bg);
+  font-family: var(--font-hand), sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* ====== メインコンテンツ中央寄せ ====== */
+.center-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: left;
+}
+
+/* ====== ヘッダー ====== */
+header {
+  padding: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* ====== プロフィールカード ====== */
+.profile-card {
+  background-color: var(--soft-blue);
+  border: 2px solid var(--accent-color);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 1rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.profile-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--dark-blue);
+}
+
+.profile-card p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* ====== タグ表示 ====== */
+.tags {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.tag {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #01579B;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ====== ボタン ====== */
+button {
+  background-color: var(--main-blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--dark-blue);
+}
+
+/* ====== フッター ====== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.koala-footer {
+  width: 80px;
+  margin-top: 1rem;
+}
+
+/* ====== スマホ・タブレット対応 ====== */
+@media (max-width: 600px) {
+  h1, h2, h3 {
+    font-size: 1.5em;
+    margin-left: 0;
+    padding: 8px 0;
+  }
+  .center-content {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+  .button-link {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+.profile-card {
+  width: 100%;
+  max-width: 800px; /* ← 少し広げて調整可能に */
+  margin: 1rem auto; /* ← 中央配置を確保 */
+  padding: 2rem;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px dashed #01579B;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.center-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: left;
+}
